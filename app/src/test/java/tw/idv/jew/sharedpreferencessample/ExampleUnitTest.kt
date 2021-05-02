@@ -1,4 +1,4 @@
-package tw.idv.jew.datastoresample
+package tw.idv.jew.sharedpreferencessample
 
 import org.junit.Test
 

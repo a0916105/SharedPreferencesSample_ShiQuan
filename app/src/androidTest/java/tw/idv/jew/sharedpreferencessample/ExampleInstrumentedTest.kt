@@ -1,4 +1,4 @@
-package tw.idv.jew.datastoresample
+package tw.idv.jew.sharedpreferencessample
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

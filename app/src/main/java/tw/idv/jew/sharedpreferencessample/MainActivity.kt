@@ -1,9 +1,13 @@
-package tw.idv.jew.datastoresample
+package tw.idv.jew.sharedpreferencessample
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,12 +29,26 @@ class MainActivity : AppCompatActivity() {
         //精簡commit()的方式
         preferences.edit(commit = true){
             putInt("MyKey", value)
-            putInt("MyKey2", value+1)
+            putInt("MyKey2", value + 1)
         }
         //精簡apply()的方式，commit預設為false
         preferences.edit(){
             putInt("MyKey", value)
-            putInt("MyKey2", value+1)
+            putInt("MyKey2", value + 1)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.settings ->
+                startActivity(Intent(this, SettingsActivity::class.java))
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

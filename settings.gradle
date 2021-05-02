@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "DataStoreSample"
+rootProject.name = "SharedPreferencesSample"
